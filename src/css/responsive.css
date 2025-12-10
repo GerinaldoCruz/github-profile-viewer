@@ -22,7 +22,7 @@
     padding: var(--spacing-lg); 
   }
   
-  .container header #input-search,
+  .container header .input-search,
   .container header #btn-search {
     max-width: 100%;
   }

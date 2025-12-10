@@ -92,7 +92,7 @@ main {
   letter-spacing: -0.025em;
 }
 
-.container header #input-search {
+.container header .input-search {
   width: 100%;
   max-width: 24rem;
   font-size: var(--font-sm);
@@ -106,12 +106,12 @@ main {
   outline: none;
 }
 
-.container header #input-search:focus {
+.container header .input-search:focus {
   border-color: var(--ring);
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
-.container header #input-search::placeholder {
+.container header .input-search::placeholder {
   color: var(--muted-foreground);
 }
 
@@ -143,4 +143,19 @@ main {
 
 .container .profile-results.hide {
   display: none;
+}
+
+.container .profile-results .profile-card {
+   display: flex;
+   align-items: center;
+   gap: 2rem;
+   border-bottom: 1px solid #cecccc;
+   padding: 2rem;
+   max-width: 500px;
+   margin: 2rem auto;
+}
+
+.container .profile-results .profile-card img {
+   width: 120px;
+   border-radius: 50%;
 }

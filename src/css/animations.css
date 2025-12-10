@@ -7,11 +7,11 @@ body {
   animation: gradientShift 15s ease infinite;
 }
 
-.container header #input-search {
+.container header .input-search {
   transition: var(--transition);
 }
 
-.container header #input-search:focus {
+.container header .input-search:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
