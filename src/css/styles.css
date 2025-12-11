@@ -148,6 +148,15 @@ main {
 .container .profile-results .profile-card {
    display: flex;
    align-items: center;
+}
+
+.container .profile-results .profile-card img {
+   width: 120px;
+   border-radius: 50%;
+}
+
+.container .profile-results .profile-card,
+.container .profile-results .profile-counter {
    gap: 2rem;
    border-bottom: 1px solid #cecccc;
    padding: 2rem;
@@ -155,7 +164,19 @@ main {
    margin: 2rem auto;
 }
 
-.container .profile-results .profile-card img {
-   width: 120px;
-   border-radius: 50%;
+.container .profile-results .profile-counter {
+   display: flex;
+   justify-content: center; 
+}
+
+.container .profile-results .profile-counter h4 {
+   font-size: 0.74rem;
+   font-weight: normal;
+   margin-bottom: 8px;
+   text-transform: uppercase;
+}
+
+.container .profile-results .profile-counter span {
+   font-size: 2rem;
+   font-weight: bold;
 }
