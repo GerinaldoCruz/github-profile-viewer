@@ -1,19 +1,25 @@
 import {feedbackMessage} from './profileView.js'
 
-const githubUrl = userName => `https://api.github.com/users/${userName}`
+const baseUrl = `https://api.github.com/users/`
+const githubUrl = userName => `${baseUrl}${userName}`
+const repositoriesUrl = userName => `${baseUrl}${userName}/repos?per_page=10&sort=created`
 
-const getUser = async userName => {
+const getUserData = async url => {
    try {
-      const request = await fetch(githubUrl(userName))
-
+      const request = await fetch(url)
+   
       if (!request.ok) {
-         throw ('Não foi possível obter os dados')
+         throw(`Não foi possível obter os dados`)
       }
-
+   
       return request.json()
    } catch (error) {
       feedbackMessage(error)
    }
 }
 
-export const userData = userName => getUser(userName)
+export const userData = async userName => 
+   await getUserData(githubUrl(userName))
+  
+export const repositoriesData = async userName => 
+   await getUserData(repositoriesUrl(userName))

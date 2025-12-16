@@ -1,39 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
-:root {
-  --radius: 0.5rem;
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --ring: hsl(262, 100%, 76%);
-  --background: hsl(0, 0%, 100%);
-  --foreground: hsl(222.2, 84%, 4.9%);
-  --muted: hsl(210, 40%, 96.1%);
-  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  --card: hsl(0, 0%, 100%);
-  --primary: hsl(222.2, 47.4%, 11.2%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  
-  --font-xs: 0.75rem;
-  --font-sm: 0.875rem;
-  --font-md: 1rem;
-  --font-lg: 1.25rem;
-  --font-xl: 1.5rem;
-  --font-2xl: 1.875rem;
-  --font-3xl: 2rem;
-  
-  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  
-  --transition: all 0.2s;
-}
-
 body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #fda085 100%);
   background-size: 400% 400%;
@@ -140,23 +106,26 @@ main {
   background: #667eea;
   box-shadow: var(--shadow-sm);
 }
+.container .profile-results {
+   width: 100%;
+}
 
 .container .profile-results.hide {
   display: none;
 }
 
-.container .profile-results .profile-card {
+.profile-card {
    display: flex;
    align-items: center;
 }
 
-.container .profile-results .profile-card img {
+.profile-card img {
    width: 120px;
    border-radius: 50%;
 }
 
-.container .profile-results .profile-card,
-.container .profile-results .profile-counter {
+.profile-card,
+.profile-counter {
    gap: 2rem;
    border-bottom: 1px solid #cecccc;
    padding: 2rem;
@@ -164,19 +133,57 @@ main {
    margin: 2rem auto;
 }
 
-.container .profile-results .profile-counter {
+.profile-counter {
    display: flex;
    justify-content: center; 
 }
 
-.container .profile-results .profile-counter h4 {
+.profile-counter h4 {
    font-size: 0.74rem;
    font-weight: normal;
    margin-bottom: 8px;
    text-transform: uppercase;
 }
 
-.container .profile-results .profile-counter span {
+.profile-counter span {
    font-size: 2rem;
    font-weight: bold;
+}
+
+.repositories {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: .5rem;
+   padding: 22px;
+}
+
+.repository-card{
+   cursor: pointer;
+   width: 250px;
+   padding: 1rem;
+   box-shadow: var(--shadow-sm);
+   transition: var(--transition) ease;
+   text-align: start;
+}
+
+.repository-card:hover {
+   transform: scale(1.01);
+   box-shadow: var(--shadow-lg);
+}
+
+.repository-card h3 {
+   font-size: var(--font-md);
+}
+
+.repository-status {
+   margin-top: .5rem;
+   font-size: var(--font-sm);
+}
+
+.repository-status li {
+   background: #ececec;
+   color: var(--muted-foreground);
+   margin-bottom: 4px;
+   padding: 4px;
 }

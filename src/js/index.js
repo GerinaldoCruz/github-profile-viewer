@@ -1,5 +1,5 @@
-import {userData} from './githubApi.js'
-import {profileResults, feedbackMessage, insertIntoDOM} from './profileView.js'
+import {userData, repositoriesData} from './githubApi.js'
+import {feedbackMessage, insertIntoDOM} from './profileView.js'
 
 const form = document.querySelector('form')
 
@@ -13,15 +13,19 @@ form.addEventListener('submit', async event => {
       return
    }
 
-   const user = await userData(inputValue)   
+   const user = await userData(inputValue)
+   const repositories = await repositoriesData(inputValue)
    
+   console.log(repositories);
+   
+
    if (!user) {
       feedbackMessage(`Usuário inexistente.`)
+      event.target.reset()
       return
    }
    
-   insertIntoDOM(user, profileResults)
+   insertIntoDOM(user, repositories)
 
    event.target.reset()
 })
-
