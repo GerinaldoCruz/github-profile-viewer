@@ -35,7 +35,7 @@ export const insertIntoDOM = (user, repositoriesData) => {
       <div class="profile-card">
          <img src="${avatar_url}" alt="Foto do usuário">
          <div>
-            <h3>${name}</h3>
+            <h3>${name || 'Não possui nome cadastrado'}</h3>
             <p>${bio || 'Não possui bio cadastrada 😥. '}</p>
          </div>
       </div>
